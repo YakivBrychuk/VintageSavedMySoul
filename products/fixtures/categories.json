@@ -1,0 +1,31 @@
+[
+    {"pk": 1, "model": "products.category", "fields": {"name": "by_price", "friendly_name": "By Price"}},
+    {"pk": 2, "model": "products.category", "fields": {"name": "by_rating", "friendly_name": "By Rating"}},
+    {"pk": 3, "model": "products.category", "fields": {"name": "by_category", "friendly_name": "By Category"}},
+    {"pk": 4, "model": "products.category", "fields": {"name": "all_products", "friendly_name": "All Products"}},
+    
+    {"pk": 5, "model": "products.category", "fields": {"name": "blouses_shirts", "friendly_name": "Blouses and Shirts"}},
+    {"pk": 6, "model": "products.category", "fields": {"name": "blazers_jackets", "friendly_name": "Blazers and Jackets"}},
+    {"pk": 7, "model": "products.category", "fields": {"name": "knitwear", "friendly_name": "Knitwear"}},
+    {"pk": 8, "model": "products.category", "fields": {"name": "dresses", "friendly_name": "Dresses"}},
+    {"pk": 9, "model": "products.category", "fields": {"name": "skirts", "friendly_name": "Skirts"}},
+    {"pk": 10, "model": "products.category", "fields": {"name": "tops", "friendly_name": "Tops"}},
+    {"pk": 11, "model": "products.category", "fields": {"name": "vests", "friendly_name": "Vests"}},
+    {"pk": 12, "model": "products.category", "fields": {"name": "t_shirts", "friendly_name": "T-shirts"}},
+    {"pk": 13, "model": "products.category", "fields": {"name": "lingerie", "friendly_name": "Lingerie"}},
+    {"pk": 14, "model": "products.category", "fields": {"name": "bodysuit", "friendly_name": "Bodysuit"}},
+    {"pk": 15, "model": "products.category", "fields": {"name": "jumpsuit", "friendly_name": "Jumpsuit"}},
+    {"pk": 16, "model": "products.category", "fields": {"name": "cardigan", "friendly_name": "Cardigan"}},
+    {"pk": 17, "model": "products.category", "fields": {"name": "corsets", "friendly_name": "Corsets"}},
+    {"pk": 18, "model": "products.category", "fields": {"name": "coats_jackets", "friendly_name": "Coats, Outdoor Jackets"}},
+
+    {"pk": 19, "model": "products.category", "fields": {"name": "handmade_tops", "friendly_name": "Tops"}},
+    {"pk": 20, "model": "products.category", "fields": {"name": "handmade_dresses", "friendly_name": "Dresses"}},
+    {"pk": 21, "model": "products.category", "fields": {"name": "handmade_jackets_blazers", "friendly_name": "Jackets & Blazers"}},
+    {"pk": 22, "model": "products.category", "fields": {"name": "handmade_accessories", "friendly_name": "Accessories"}},
+
+    {"pk": 23, "model": "products.category", "fields": {"name": "new_arrivals", "friendly_name": "New Arrivals"}},
+    {"pk": 24, "model": "products.category", "fields": {"name": "deals", "friendly_name": "Deals"}},
+    {"pk": 25, "model": "products.category", "fields": {"name": "clearance", "friendly_name": "Clearance"}},
+    {"pk": 26, "model": "products.category", "fields": {"name": "all_specials", "friendly_name": "All Specials"}}
+]
