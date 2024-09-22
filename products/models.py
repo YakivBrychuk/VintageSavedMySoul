@@ -2,6 +2,9 @@ import os
 import subprocess
 from django.core.exceptions import ValidationError
 from django.db import models
+from pillow_avif import AvifImagePlugin
+from PIL import Image
+
 
 # Create your models here.
 
@@ -18,9 +21,9 @@ class Category(models.Model):
 
 def validate_image_extension(value):
     ext = value.name.split('.')[-1].lower()
-    valid_extensions = ['jpg', 'jpeg', 'png', 'avif']
+    valid_extensions = ['jpg', 'jpeg', 'png', 'avif', 'webp']
     if ext not in valid_extensions:
-        raise ValidationError(f'Unsupported file extension: {ext}. Supported formats: jpg, jpeg, png, avif.')
+        raise ValidationError(f'Unsupported file extension: {ext}. Supported formats: jpg, jpeg, png, avif, webp.')
 
 
 class Product(models.Model):
@@ -30,7 +33,6 @@ class Product(models.Model):
     description = models.TextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
     rating = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
-    image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True, upload_to='images/', validators=[validate_image_extension])
 
     def __str__(self):
@@ -39,15 +41,38 @@ class Product(models.Model):
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
 
-        # Convert JPEG/PNG to AVIF after saving the image
+        # Convert WebP to PNG before converting to AVIF
+        if self.image.path.endswith('.webp'):
+            with Image.open(self.image.path) as img:
+                png_image_path = self.image.path.rsplit('.', 1)[0] + '.png'
+                img.save(png_image_path, 'PNG')
+
+            # Replace the path of the image with the PNG version
+            self.image.name = f'images/{os.path.basename(png_image_path)}'
+            self.save()
+
+        # Convert JPEG/PNG/WebP (after conversion to PNG) to AVIF
         if self.image.path.endswith(('.jpg', '.jpeg', '.png')):
-            avif_image_path = self.image.path.replace('.jpg', '.avif').replace('.jpeg', '.avif').replace('.png', '.avif')
+            avif_image_path = self.image.path.rsplit('.', 1)[0] + '.avif'
 
             try:
+                # Run the AVIF conversion
                 subprocess.run(['avifenc', self.image.path, avif_image_path], check=True)
-                # Update the image path to the new AVIF file
-                self.image.name = os.path.basename(avif_image_path)
-                self.save()  # Save the model with the updated image path
+
+                # Remove the original image file after conversion
+                if os.path.exists(self.image.path):
+                    os.remove(self.image.path)
+
+                # Update the image field to point to the AVIF file
+                self.image.name = f'images/{os.path.basename(avif_image_path)}'
+                self.save()
 
             except subprocess.CalledProcessError as e:
                 print(f"Error converting to AVIF: {e}")
+
+    # Dynamic URL access for images
+    @property
+    def image_url(self):
+        if self.image:
+            return self.image.url
+        return None
