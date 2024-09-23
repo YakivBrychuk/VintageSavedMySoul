@@ -13,25 +13,26 @@
         </li>
 
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="clothing-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'products' %}?category=blouses_shirts,blazers_jackets,knitwear,dresses,skirts,tops,vests,t_shirts,lingerie,bodysuit,jumpsuit,cardigan,corsets,coats_jackets" id="clothing-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Vintage
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
-                <a href="" class="dropdown-item">Blouses & Shirts</a>
-                <a href="" class="dropdown-item">Blazers & Jackets</a>
-                <a href="" class="dropdown-item">Knitwear</a>
-                <a href="" class="dropdown-item">Dresses</a>
-                <a href="" class="dropdown-item">Skirts</a>
-                <a href="" class="dropdown-item">Tops</a>
-                <a href="" class="dropdown-item">Vests</a>
-                <a href="" class="dropdown-item">T-shirts</a>
-                <a href="" class="dropdown-item">Lingerie</a>
-                <a href="" class="dropdown-item">Bodysuit</a>
-                <a href="" class="dropdown-item">Jumpsuit</a>
-                <a href="" class="dropdown-item">Cardigan</a>
-                <a href="" class="dropdown-item">Corsets</a>
-                <a href="" class="dropdown-item">Coats, Outdoor Jackets</a>
+                <a href="{% url 'products' %}?category=vintage,blouses_shirts" class="dropdown-item">Blouses & Shirts</a>
+                <a href="{% url 'products' %}?category=blazers_jackets" class="dropdown-item">Blazers & Jackets</a>
+                <a href="{% url 'products' %}?category=knitwear" class="dropdown-item">Knitwear</a>
+                <a href="{% url 'products' %}?category=dresses" class="dropdown-item">Dresses</a>
+                <a href="{% url 'products' %}?category=skirts" class="dropdown-item">Skirts</a>
+                <a href="{% url 'products' %}?category=tops" class="dropdown-item">Tops</a>
+                <a href="{% url 'products' %}?category=vests" class="dropdown-item">Vests</a>
+                <a href="{% url 'products' %}?category=t_shirts" class="dropdown-item">T-shirts</a>
+                <a href="{% url 'products' %}?category=lingerie" class="dropdown-item">Lingerie</a>
+                <a href="{% url 'products' %}?category=bodysuit" class="dropdown-item">Bodysuit</a>
+                <a href="{% url 'products' %}?category=jumpsuit" class="dropdown-item">Jumpsuit</a>
+                <a href="{% url 'products' %}?category=cardigan" class="dropdown-item">Cardigan</a>
+                <a href="{% url 'products' %}?category=corsets" class="dropdown-item">Corsets</a>
+                <a href="{% url 'products' %}?category=coats_jackets" class="dropdown-item">Coats, Outdoor Jackets</a>
             </div>
+            
         </li>
 
         <li class="nav-item dropdown">
@@ -39,11 +40,11 @@
                 Handmade
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="homeware-link">
-                <a href="" class="dropdown-item">Tops</a>
-                <a href="" class="dropdown-item">Dresses</a>
-                <a href="" class="dropdown-item">Jackets & Blazers</a>
-                <a href="" class="dropdown-item">Accessories</a>
-            </div>
+                <a href="{% url 'products' %}?category=handmade_tops" class="dropdown-item">Tops</a>
+                <a href="{% url 'products' %}?category=handmade_dresses" class="dropdown-item">Dresses</a>
+                <a href="{% url 'products' %}?category=handmade_jackets_blazers" class="dropdown-item">Jackets & Blazers</a>
+                <a href="{% url 'products' %}?category=handmade_accessories" class="dropdown-item">Accessories</a>
+            </div>            
         </li>
 
         <li class="nav-item dropdown">
@@ -51,11 +52,11 @@
                 Special Offers
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="specials-link">
-                <a href="" class="dropdown-item">New Arrivals</a>
-                <a href="" class="dropdown-item">Deals</a>
-                <a href="" class="dropdown-item">Clearance</a>
-                <a href="" class="dropdown-item">All Specials</a>
-            </div>
+                <a href="{% url 'products' %}?category=new_arrivals" class="dropdown-item">New Arrivals</a>
+                <a href="{% url 'products' %}?category=deals" class="dropdown-item">Deals</a>
+                <a href="{% url 'products' %}?category=clearance" class="dropdown-item">Clearance</a>
+                <a href="{% url 'products' %}?category=all_specials" class="dropdown-item">All Specials</a>
+            </div>            
         </li>
     </ul>
 </div>
