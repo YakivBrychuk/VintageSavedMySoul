@@ -1,10 +1,13 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
-from django.contrib import messages 
+from django.contrib import messages
 from django.db.models import Q
 from .models import Product, Category
 
+# Create your views here.
+
+
 def all_products(request):
-    """ A view to display all products, including sorting and search queries """
+    """ A view to show all products, including sorting and search queries """   
 
     products = Product.objects.all()
     query = None
@@ -13,42 +16,37 @@ def all_products(request):
     direction = None
 
     if request.GET:
-        # Handle sorting
         if 'sort' in request.GET:
             sortkey = request.GET['sort']
             sort = sortkey
-            if sortkey == 'name':
+            if sortkey == "name":
                 sortkey = 'lower_name'
-                products = products.annotate(lower_name=Lower('name')) 
-
+                products = products.annotate(lower_name=Lower("name"))
+            if sortkey == 'category':
+                sortkey = 'category__name'
             if 'direction' in request.GET:
                 direction = request.GET['direction']
-                if direction == 'desc':
+                if direction == "desc":
                     sortkey = f'-{sortkey}'
+
             products = products.order_by(sortkey)
 
-        
-        # Handle category filtering
         if 'category' in request.GET:
-            # Split the category query param into a list
             categories = request.GET['category'].split(',')
-            
-            # First retrieve matching Category objects, then filter products by these categories
-            category_objects = Category.objects.filter(name__in=categories)
+            products = products.filter(category__name__in=categories)
+            categories = Category.objects.filter(name__in=categories)
+    
+    # if not categories:
+    #     categories = Category.objects.all()    
 
-            if category_objects.exists():
-                products = products.filter(category__in=category_objects)
-            else:
-                messages.error(request, "No matching categories found!")
-
-        # Handle search query
+    if request.GET:
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                messages.error(request, "You didn't enter any search criteria!")
+                messages.error(
+                    request, "You didn't enter any search criteria!")
                 return redirect(reverse('products'))
 
-            # Apply search filtering
             queries = Q(name__icontains=query) | Q(description__icontains=query)
             products = products.filter(queries)
 
@@ -57,27 +55,20 @@ def all_products(request):
     context = {
         'products': products,
         'search_term': query,
-        'selected_categories': categories,
-        'current_sorting': current_sorting, 
+        'current_categories': categories,
+        'current_sorting': current_sorting
     }
 
     return render(request, 'products/products.html', context)
-
 
 
 def product_detail(request, product_id):
     """ A view to show individual product details """
 
     product = get_object_or_404(Product, pk=product_id)
-    
-    # Ensure 'query' and 'categories' are properly handled
-    query = request.GET.get('q', None)  # Default to None if not present
-    categories = request.GET.get('category', None)  # Default to None if not present
 
     context = {
         'product': product,
-        'search_term': query,
-        'current_categories': categories.split(',') if categories else None,  # If categories exist, split them
     }
 
     return render(request, 'products/product_detail.html', context)
