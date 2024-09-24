@@ -7,6 +7,6 @@ def index(request):
     
     return render(request, 'home/index.html')
 
-def home(request):
+def index(request):
     hero_images = HeroImage.objects.filter(is_active=True)
     return render(request, 'home/index.html', {'hero_images': hero_images})

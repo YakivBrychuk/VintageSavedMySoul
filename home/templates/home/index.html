@@ -10,19 +10,26 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container h-100">
-        <div class="row h-100">
-            <div class="col-7 col-md-6 my-auto">
-                <h1 class="display-4 logo-font text-black">
-                    Discover Our Latest Collection
-                </h1>
-                <div class="my-5">
-                    <h4>
-                        <a href="{% url 'products' %}" class="shop-now-button btn btn-ls rounded-0 text-uppercase py-3">Shop Now</a>
-                    </h4>
-                </div>
-            </div>    
+    <!-- Hero Section with dynamic images -->
+    <div class="hero-section position-relative">
+        <div class="hero-images">
+            {% for image in hero_images %}
+                <img src="{{ image.image.url }}" alt="{{ image.alt_text }}">
+            {% endfor %}
+        </div>
+
+        <!-- Content over the Hero Section -->
+        <div class="container h-100 overlay-content d-flex align-items-center">
+            <div class="row w-100">
+                <div class="col-12 my-auto text-center text-white">
+                    <h1 class="display-4 logo-font">Discover Our Latest Collection</h1>
+                    <div class="my-5">
+                        <h4>
+                            <a href="{% url 'products' %}" class="shop-now-button btn btn-ls rounded-0 text-uppercase py-3">Shop Now</a>
+                        </h4>
+                    </div>
+                </div>    
+            </div>
         </div>
     </div>
-
 {% endblock %}
