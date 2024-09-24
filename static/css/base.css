@@ -95,6 +95,11 @@ body {
     z-index: -1;
 }
 
+a.category-badge > span.badge:hover {
+    background: #212529 !important;
+    color: white !important;
+}
+
 .hero-section {
     display: grid;
     grid-template-columns: 1fr 1fr;
