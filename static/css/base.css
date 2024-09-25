@@ -110,7 +110,7 @@ a.category-badge > span.badge:hover {
 }
 
 /* semi-transparent effect */
-.hero-section::before {
+/* .hero-section::before { */
     content: '';
     position: absolute;
     top: 0;
