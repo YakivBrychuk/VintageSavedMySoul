@@ -17,10 +17,11 @@ def checkout(request):
         return redirect(reverse('products'))
 
     current_bag = bag_contents(request)
-    total_bag = current_bag['total_bag']
-    stripe_total = round(total_bag * 100)
+    total = current_bag['grand_total']
+    stripe_total = round(total * 100)
+
     stripe.api_key = stripe_secret_key
-    stripe.payment_intent.create(
+    intent = stripe.PaymentIntent.create(
         amount=stripe_total,
         currency=settings.STRIPE_CURRENCY,
     )
