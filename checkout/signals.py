@@ -4,15 +4,16 @@ from django.dispatch import receiver
 from .models import OrderLineItem
 
 @receiver(post_save, sender=OrderLineItem)
-def update_on_save_delete(sender, instance, **kwargs):
+def update_on_save(sender, instance, **kwargs):
     """
     Update order total on lineitem update/create/delete
     """
     instance.order.update_total()
 
 @receiver(post_delete, sender=OrderLineItem)
-def update_on_save_delete(sender, instance, **kwargs):
+def update_on_delete(sender, instance, **kwargs):
     """
     Update order total on lineitem update/create/delete
     """
+    print('delete signal received!')
     instance.order.update_total() 
