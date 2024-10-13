@@ -4,5 +4,9 @@ Welcome to Vintage Saved My Soul
 
 
 ---
+## Credits
 
-Happy coding!
+### Code
+ * General programming concepts and troubleshooting guided by discussions and solutions on [Stack Overflow](https://stackoverflow.com).
+ * The walkthrough of Project - Botique Ado
+ * Stripe Steps:https://docs.stripe.com/payments/accept-a-payment-deferred?type=payment
