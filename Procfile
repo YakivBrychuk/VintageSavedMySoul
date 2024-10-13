@@ -1,0 +1,1 @@
+web: gunicorn vintagesavedmysoul.wsgi:application
