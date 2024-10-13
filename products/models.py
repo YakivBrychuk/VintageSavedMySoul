@@ -6,12 +6,10 @@ from pillow_avif import AvifImagePlugin
 from PIL import Image
 
 
-# Create your models here.
-
 class Category(models.Model):
-
     class Meta:
         verbose_name_plural = 'Categories'
+
     name = models.CharField(max_length=254)
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
 
@@ -34,7 +32,7 @@ class Product(models.Model):
     sku = models.CharField(max_length=254, null=True, blank=True)
     name = models.CharField(max_length=254)
     description = models.TextField()
-    has_sizes = models.BooleanField(default=False, null=True, blank=True) #size
+    has_sizes = models.BooleanField(default=False, null=True, blank=True)  # size
     price = models.DecimalField(max_digits=6, decimal_places=2)
     rating = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
     image = models.ImageField(null=True, blank=True, upload_to='images/', validators=[validate_image_extension])
@@ -43,36 +41,40 @@ class Product(models.Model):
         return self.name
 
     def save(self, *args, **kwargs):
+        # Save the model first to ensure the image is available
         super().save(*args, **kwargs)
 
-        # Convert WebP to PNG before converting to AVIF
-        if self.image.path.endswith('.webp'):
-            with Image.open(self.image.path) as img:
-                png_image_path = self.image.path.rsplit('.', 1)[0] + '.png'
-                img.save(png_image_path, 'PNG')
-
-            # Replace the path of the image with the PNG version
-            self.image.name = f'images/{os.path.basename(png_image_path)}'
-            self.save()
-
-        # Convert JPEG/PNG/WebP (after conversion to PNG) to AVIF
-        if self.image.path.endswith(('.jpg', '.jpeg', '.png')):
-            avif_image_path = self.image.path.rsplit('.', 1)[0] + '.avif'
-
+        if self.image and hasattr(self.image, 'path'):  # Ensure an image exists and has a file path
+            # Perform the image processing
             try:
-                # Run the AVIF conversion
-                subprocess.run(['avifenc', self.image.path, avif_image_path], check=True)
+                image_path = self.image.path
+                if image_path.endswith('.webp'):
+                    with Image.open(image_path) as img:
+                        # Convert WebP to PNG
+                        png_image_path = image_path.rsplit('.', 1)[0] + '.png'
+                        img.save(png_image_path, 'PNG')
 
-                # Remove the original image file after conversion
-                if os.path.exists(self.image.path):
-                    os.remove(self.image.path)
+                    # Update the image path to PNG
+                    self.image.name = f'images/{os.path.basename(png_image_path)}'
+                    self.save(update_fields=['image'])
 
-                # Update the image field to point to the AVIF file
-                self.image.name = f'images/{os.path.basename(avif_image_path)}'
-                self.save()
+                # Convert JPEG/PNG to AVIF
+                if image_path.endswith(('.jpg', '.jpeg', '.png')):
+                    avif_image_path = image_path.rsplit('.', 1)[0] + '.avif'
+                    subprocess.run(['avifenc', image_path, avif_image_path], check=True)
+
+                    # Remove the original image after conversion
+                    if os.path.exists(image_path):
+                        os.remove(image_path)
+
+                    # Update the image path to the AVIF version
+                    self.image.name = f'images/{os.path.basename(avif_image_path)}'
+                    self.save(update_fields=['image'])
 
             except subprocess.CalledProcessError as e:
                 print(f"Error converting to AVIF: {e}")
+            except Exception as e:
+                print(f"Error processing image: {e}")
 
     # Dynamic URL access for images
     @property
