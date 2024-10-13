@@ -13,9 +13,13 @@
     <!-- Hero Section with dynamic images -->
     <div class="hero-section position-relative">
         <div class="hero-images">
-            {% for image in hero_images %}
-                <img src="{{ image.image.url }}" alt="{{ image.alt_text }}">
-            {% endfor %}
+            {% if hero_images %}
+                {% for image in hero_images %}
+                    <img src="{{ image.image.url }}" alt="{{ image.alt_text }}">
+                {% endfor %}
+            {% else %}
+                <img src="{% static 'hero_images/sunglasses-1.webp' %}" alt="Default Image">
+            {% endif %}
         </div>
 
         <!-- Content over the Hero Section -->

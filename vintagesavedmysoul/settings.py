@@ -25,10 +25,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-jd5(vc2+od*7erx4ajq$a8y5^m7$nmaac-gca6-)@r%y-*t4#7'
+SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = ['vintagesavedmysoul-eb73f1fba3d0.herokuapp.com', 'localhost', '127.0.0.1']
 
