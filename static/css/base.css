@@ -242,10 +242,10 @@ input[name='q']::placeholder {
 .side-menu {
     position: fixed;
     top: 0;
-    left: -250px; 
-    width: 250px;
+    left: -350px; 
+    width: 350px;
     height: 100vh;
-    background-color: rgba(255, 255, 255, 0.5); 
+    background-color: rgba(255, 255, 255, 0.79); 
     border: 1px solid rgba(255, 255, 255, 0.3); 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
     transition: left 0.3s ease;
@@ -254,33 +254,80 @@ input[name='q']::placeholder {
     overflow-y: auto; 
   }
   
-  .side-menu.open {
-    left: 0; 
-  }
-  
-  .close-button {
+.side-menu.open {
+left: 0; 
+}
+
+.close-button {
+background: none;
+border: none;
+font-size: 2rem;
+cursor: pointer;
+color: #333;
+position: absolute;
+top: 10px;
+right: 10px;
+}
+.close-button:hover {
     background: none;
     border: none;
     font-size: 2rem;
     cursor: pointer;
-    color: #333;
+    color: #00040D ;
     position: absolute;
     top: 10px;
     right: 10px;
-  }
-  
-  .overlay {
-    display: none;
-    position: fixed;
-    top: 0; left: 0;
-    width: 100vw; height: 100vh;
-    background-color: rgba(0,0,0,0.4);
-    z-index: 9998;
-  }
-  
-  .overlay.show {
-    display: block;
-  }
+    }
+
+.overlay {
+display: none;
+position: fixed;
+top: 0; left: 0;
+width: 100vw; height: 100vh;
+background-color: rgba(0,0,0,0.4);
+z-index: 9998;
+}
+
+.overlay.show {
+display: block;
+}
+
+/* Horizontal Menu */
+.nav-pills .nav-link {
+    color: black;
+    border-radius: 0;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+}
+
+.nav-pills .nav-link.active {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: black;
+}
+
+/* Vertical Menu */
+#verticalMenu {
+    display: flex;
+    flex-direction: column;
+    padding-top: 1rem;
+    border-top: 1px solid #ddd;
+}
+
+#verticalMenu a {
+    padding: 0.5rem 0;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+#verticalMenu a:hover {
+    color: #000;
+}
+
+
+
   
 /* Main Page Images  */
 
@@ -517,12 +564,26 @@ input[name='q']::placeholder {
         font-size: 1.4rem; 
         z-index: 1000;
     }
+    
+    .dropdown-item:hover {
+        background: #e6d8cf;
+        background-color: rgba(255, 255, 255, 0.9);
+        border: 1px solid rgba(244, 244, 244, 0.866); 
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    }
 }
 
 /* sm screens */
 @media (max-width: 768px) {
     .myheader {
         font-size: 1.2rem; 
+    }
+
+    .dropdown-item:hover {
+        background: #e6d8cf;
+        background-color: rgba(255, 255, 255, 0.9);
+        border: 1px solid rgba(244, 244, 244, 0.866); 
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
     }
 }
 
