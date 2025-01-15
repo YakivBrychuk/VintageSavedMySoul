@@ -10,15 +10,15 @@
 {% endblock %}
 
 {% block content %}
-    <!-- Hero Section with dynamic images -->
+    <!-- Hero Section w/ images -->
     <div class="hero-section position-relative">
         <div class="hero-images">
             {% if hero_images %}
                 {% for image in hero_images %}
-                    <img src="{{ image.image.url }}" alt="{{ image.alt_text }}">
+                    <img src="{{ image.image.url }}" alt="{{ image.alt_text }}" class="img-fluid">
                 {% endfor %}
             {% else %}
-                <img src="{% static 'hero_images/sunglasses-1.webp' %}" alt="Default Image">
+                <img src="{% static 'hero_images/sunglasses-1.webp' %}" alt="Default Image" class="img-fluid">
             {% endif %}
         </div>
 

@@ -1,58 +1,92 @@
-<ul>
-    <li class="list-inline-item">
-      <a class="text-black nav-link d-block d-lg-none" href="#" id="mobile-search" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <div class="text-center">
+
+    <ul class="list-inline list-unstyled d-flex justify-content-between align-items-center m-0 p-0">
+        
+        <li class="list-inline-item">
+          <a class="text-black nav-link d-block d-lg-none" href="#" id="mobile-search"
+             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <div class="text-center">
+              <!-- Search -->
               <div><i class="fas fa-search fa-lg"></i></div>
-              <p class="my-0">Search</p>
-          </div>
-      </a>
-      <div class="dropdown-menu border-0 w-100 p-3 rounded-0 my-0" aria-labelledby="mobile-search">
-          <form class="form" method="GET" action="{% url 'products' %}">
+            </div>
+          </a>
+          <div class="dropdown-menu border-0 w-100 p-3 rounded-0 my-0" aria-labelledby="mobile-search">
+            <form class="form" method="GET" action="{% url 'products' %}">
               <div class="input-group w-100">
-                  <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our site">
-                  <div class="input-group-append">
-                      <button class="form-control form-control btn btn-black border border-black rounded-0" type="submit">
-                          <span class="icon">
-                              <i class="fas fa-search"></i>
-                          </span>
-                      </button>
-                  </div>
+                <input class="form-control border border-black rounded-0"
+                       type="text" name="q"
+                       placeholder="Search our site">
+                <div class="input-group-append">
+                  <button class="form-control btn btn-black border border-black rounded-0"
+                          type="submit">
+                    <span class="icon">
+                      <i class="fas fa-search"></i>
+                    </span>
+                  </button>
+                </div>
               </div>
-          </form>
-      </div>
-  </li>
-  <li class="list-inline-item dropdown">
-      <a class="text-black nav-link d-block d-lg-none" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <div class="text-center">
-              <div><i class="fas fa-user fa-lg"></i></div>
-              <p class="my-0">My Account</p>
+            </form>
           </div>
-      </a>
-      <div class="dropdown-menu border-0" aria-labelledby="user-options">
-          {% if request.user.is_authenticated %}
+        </li>
+      
+        <!-- Heart Icon (Favorites) -->
+        <li class="list-inline-item heart-icon">
+          <a class="nav-link text-black d-block d-lg-none"
+             href="{% if request.user.is_authenticated %}{% url 'favorites' %}{% else %}{% url 'account_login' %}{% endif %}">
+            <div class="text-center">
+              <!-- EXACT same Heart SVG from your desktop row -->
+              <svg width="34" height="32" viewBox="0 0 34 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M32.0892 16.5375C32.181 16.4043 32.2643 16.2659 32.3391 16.1223C33.6923 14.0059 34.2466 11.4589 33.8986 8.95586C33.5506 6.45282 32.324 4.16438 30.4474 2.51685C28.5708 0.869308 26.1721 -0.0249928 23.6982 0.000531658C21.2242 0.0260561 18.8437 0.969665 17 2.65559C15.1563 0.969665 12.7758 0.0260561 10.3018 0.000531658C7.82788 -0.0249928 5.42919 0.869308 3.55259 2.51685C1.67599 4.16438 0.449443 6.45282 0.101428 8.95586C-0.246586 11.4589 0.307662 14.0059 1.66093 16.1223C1.73572 16.2648 1.81901 16.4037 1.9108 16.5392L3.05477 18.2084C3.44835 18.783 3.89768 19.3155 4.39592 19.7978L17 32L29.6041 19.7978C30.1027 19.3137 30.5497 18.784 30.9452 18.2084L32.0892 16.5375Z"
+                  fill="black"/>
+              </svg>
+            </div>
+          </a>
+        </li>
+      
+        <!-- User Icon (Profile/Login) -->
+        <li class="list-inline-item dropdown">
+          <a class="text-black nav-link d-block d-lg-none"
+             href="#" id="user-options" data-toggle="dropdown"
+             aria-haspopup="true" aria-expanded="false">
+            <div class="text-center">
+              <!-- EXACT same User SVG from desktop row -->
+              <svg width="54" height="54" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" 
+                  d="M19.125 18C19.125 16.9658 19.3287 15.9418 19.7244 14.9864C20.1202 14.0309 20.7003 13.1628 21.4315 12.4315C22.1628 11.7003 23.0309 11.1202 23.9864 10.7244C24.9418 10.3287 25.9658 10.125 27 10.125C28.0342 10.125 29.0582 10.3287 30.0136 10.7244C30.9691 11.1202 31.8372 11.7003 32.5685 12.4315C33.2997 13.1628 33.8798 14.0309 34.2756 14.9864C34.6713 15.9418 34.875 16.9658 34.875 18C34.875 20.0886 34.0453 22.0916 32.5685 23.5685C31.0916 25.0453 29.0886 25.875 27 25.875C24.9114 25.875 22.9084 25.0453 21.4315 23.5685C19.9547 22.0916 19.125 20.0886 19.125 18ZM27 7.875C24.3147 7.875 21.7394 8.94174 19.8405 10.8405C17.9417 12.7393 16.875 15.3147 16.875 18C16.875 20.6853 17.9417 23.2606 19.8405 25.1595C21.7394 27.0583 24.3147 28.125 27 28.125C29.6853 28.125 32.2606 27.0583 34.1595 25.1595C36.0583 23.2606 37.125 20.6853 37.125 18C37.125 15.3147 36.0583 12.7393 34.1595 10.8405C32.2606 8.94174 29.6853 7.875 27 7.875ZM24.1628 32.625C20.5313 32.625 17.532 33.3945 15.4462 35.3025C13.338 37.233 12.375 40.122 12.375 43.875V45H14.625V43.875C14.625 40.4842 15.4913 38.313 16.965 36.963C18.459 35.5972 20.7923 34.875 24.1628 34.875H29.8778C33.2235 34.875 35.5478 35.595 37.0395 36.963C38.5087 38.313 39.375 40.4842 39.375 43.875V45H41.625V43.875C41.625 40.122 40.662 37.233 38.5605 35.3048C36.477 33.3945 33.489 32.625 29.8755 32.625H24.1605H24.1628Z"
+                  fill="black"/>
+              </svg>
+            </div>
+          </a>
+          <div class="dropdown-menu border-0" aria-labelledby="user-options">
+            {% if request.user.is_authenticated %}
               {% if request.user.is_superuser %}
-                  <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
+                <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
               {% endif %}
-              <a href="" class="dropdown-item">My Profile</a>
+              <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
               <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-          {% else %}
+            {% else %}
               <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
               <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
-          {% endif %}
-      </div>
-  </li>
-  <li class="list-inline-item">
-      <a class="{% if grand_total %}text-primary font-weight-bold{% else %}text-black{% endif %} nav-link d-block d-lg-none" href="{% url 'view_bag' %}">
-          <div class="text-center">
-              <div><i class="fas fa-shopping-bag fa-lg"></i></div>
-              <p class="my-0">
-                  {% if grand_total %}
-                      €{{ grand_total|floatformat:2 }}
-                  {% else %}
-                      €0.00
-                  {% endif %}
-              </p>
+            {% endif %}
           </div>
-      </a>
-    </li>
-  </ul>
+        </li>
+      
+        <!-- Bag Icon (Cart) -->
+        <li class="list-inline-item">
+          <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link d-block d-lg-none"
+             href="{% url 'view_bag' %}">
+            <div class="text-center">
+              <!-- Bag SVG -->
+              <svg width="50" height="41" viewBox="0 0 50 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M20.7434 7.9966C21.1044 7.104 21.6995 6.34432 22.4556 5.81076C23.2117 5.27721 24.096 4.993 25 4.993C25.904 4.993 26.7883 5.27721 27.5444 5.81076C28.3005 6.34432 28.8956 7.104 29.2566 7.9966H20.7434ZM18.7693 7.9966C19.1705 6.5526 19.9935 5.28649 21.1159 4.38634C22.2384 3.48618 23.6005 3 25 3C26.3995 3 27.7616 3.48618 28.8841 4.38634C30.0065 5.28649 30.8295 6.5526 31.2307 7.9966H38V38H12V7.9966H18.7693ZM13.8571 9.99683V35.9998H36.1429V9.99683H13.8571Z"
+                  fill="black"/>
+                <text x="50%" y="70%" text-anchor="middle" font-size="14" fill="black">
+                  {{ bag_item_count }}
+                </text>
+              </svg>
+            </div>
+          </a>
+        </li>
+      </ul>
+      
