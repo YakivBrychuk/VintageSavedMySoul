@@ -137,3 +137,38 @@ def delete_product(request, product_id):
     product.delete()
     messages.success(request, 'Product deleted!')
     return redirect(reverse('products'))
+
+
+@login_required
+def toggle_favorite(request, product_id):
+    """
+    Add or remove a product from a user's favorites.
+    Redirect back to the same page or the favorites page.
+    """
+    product = get_object_or_404(Product, pk=product_id)
+
+    if product.favorited_by.filter(id=request.user.id).exists():
+        # If in favorites then remove it
+        product.favorited_by.remove(request.user)
+        messages.info(request, f'Removed "{product.name}" from your favorites.')
+    else:
+        # Not in favorites then its added
+        product.favorited_by.add(request.user)
+        messages.success(request, f'Added "{product.name}" to your favorites.')
+
+    # Return to the referring page if possible, or fall back to the products page
+    return redirect(request.META.get('HTTP_REFERER', reverse('products')))
+
+# Show all products favorited by the logged-in user
+@login_required
+def favorites_list(request):
+    """
+    Display all products that the user has marked as favorites.
+    """
+    # Using related_name from the Product model
+    favorite_products = request.user.favorite_products.all()
+
+    return render(request, 'products/favorites.html', {
+        'favorite_products': favorite_products,
+    })
+
