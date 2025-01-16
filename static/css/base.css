@@ -35,6 +35,9 @@ body {
     width: 1.5rem;
 }
 
+.fourhf {
+    font-family: AmalfiCoast;
+}
 
 .myheader {
     font-family: AmalfiCoast;
@@ -564,7 +567,7 @@ display: block;
         font-size: 1.4rem; 
         z-index: 1000;
     }
-    
+
     .dropdown-item:hover {
         background: #e6d8cf;
         background-color: rgba(255, 255, 255, 0.9);
