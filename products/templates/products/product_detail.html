@@ -145,39 +145,51 @@
                                 {% endif %}
                             {% endwith %}
 
+                            <!-- (Inside the col-12 for quantity) -->
                             <div class="col-12">
-                                <p class="mt-3"><strong>Quantity:</strong></p>
-                                <div class="form-group w-50">
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <button class="decrement-qty btn btn-black rounded-0"
+                                {% if product.stock > 0 %}
+                                    <p class="mt-3"><strong>Quantity:</strong></p>
+                                    <div class="form-group w-50">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <button class="decrement-qty btn btn-black rounded-0"
+                                                    data-item_id="{{ product.id }}"
+                                                    id="decrement-qty_{{ product.id }}">
+                                                    <span class="icon">
+                                                        <i class="fas fa-minus"></i>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                            
+                                            <!-- quantity input with a max = product.stock -->
+                                            <input class="form-control qty_input"
+                                                type="number"
+                                                name="quantity"
+                                                value="1"
+                                                min="1"
+                                                max="{{ product.stock }}"
                                                 data-item_id="{{ product.id }}"
-                                                id="decrement-qty_{{ product.id }}">
-                                                <span class="icon">
-                                                    <i class="fas fa-minus"></i>
-                                                </span>
-                                            </button>
-                                        </div>
-                                        <input class="form-control qty_input"
-                                            type="number"
-                                            name="quantity"
-                                            value="1"
-                                            min="1"
-                                            max="99"
-                                            data-item_id="{{ product.id }}"
-                                            id="id_qty_{{ product.id }}">
-                                        <div class="input-group-append">
-                                            <button class="increment-qty btn btn-black rounded-0"
-                                                data-item_id="{{ product.id }}"
-                                                id="increment-qty_{{ product.id }}">
-                                                <span class="icon">
-                                                    <i class="fas fa-plus"></i>
-                                                </span>
-                                            </button>
+                                                id="id_qty_{{ product.id }}">
+                                            
+                                            <div class="input-group-append">
+                                                <button class="increment-qty btn btn-black rounded-0"
+                                                    data-item_id="{{ product.id }}"
+                                                    id="increment-qty_{{ product.id }}">
+                                                    <span class="icon">
+                                                        <i class="fas fa-plus"></i>
+                                                    </span>
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                {% else %}
+                                    <!-- If stock is 0, display a message instead of a quantity form -->
+                                    <p class="text-danger mt-3">
+                                        This item is currently out of stock.
+                                    </p>
+                                {% endif %}
                             </div>
+
 
                             <div class="col-12 mt-2">
                                 <a href="{% url 'products' %}"
@@ -190,33 +202,6 @@
                                 <input type="submit"
                                        class="btn btn-black rounded-0 text-uppercase mt-5"
                                        value="Add to Bag">
-                                       <div>
-                                        <!-- Heart icon: if user logged in, toggle favorite, else login link -->
-                                        {% if user.is_authenticated %}
-                                            {% if user in product.favorited_by.all %}
-                                                <!-- Filled heart (Favorited) -->
-                                                <a href="{% url 'toggle_favorite' product.id %}" 
-                                                   class="text-danger" 
-                                                   title="Remove from Favorites">
-                                                    <i class="fas fa-heart fa-lg"></i>
-                                                </a>
-                                            {% else %}
-                                                <!-- Outline heart (Not Favorited) -->
-                                                <a href="{% url 'toggle_favorite' product.id %}" 
-                                                   class="text-secondary" 
-                                                   title="Add to Favorites">
-                                                    <i class="far fa-heart fa-lg"></i>
-                                                </a>
-                                            {% endif %}
-                                        {% else %}
-                                            <!-- If not authenticated, link to login -->
-                                            <a href="{% url 'account_login' %}"
-                                               class="text-secondary"
-                                               title="Login to Favorite">
-                                                <i class="far fa-heart fa-lg"></i>
-                                            </a>
-                                        {% endif %}
-                                    </div>
                             </div>
 
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
