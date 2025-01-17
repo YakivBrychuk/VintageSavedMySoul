@@ -1,7 +1,7 @@
 
 # VintageSavedMySoul
 
-![responsive-mockup](github_assets/readme_images/mockup.png)
+![responsive-mockup](github_assets/readme_images/all-devices-black.png)
 
 <div align="center">
 
@@ -303,7 +303,7 @@ Use an **ER diagram** with tables for `User`, `Product`, `Category`, `Order`, `O
 ----------
 
 # 🌠 Future Enhancements
-
+-   **Fix Responsiveness & its Layout Desing**: In time frame i didnt manage ti fix the responsivess iregularities.
 -   **Social Sign-In**: Quick registration via Google, Facebook, or Instagram.
 -   **Loyalty Program**: Reward system for repeat purchases, small discounts, or free shipping.
 -   **Live Chat**: 24/7 customer support or AI chatbot for instant queries.
@@ -317,7 +317,7 @@ Use an **ER diagram** with tables for `User`, `Product`, `Category`, `Order`, `O
 For detailed testing procedures (browser compatibility, device responsiveness, user scenario checks, code validation, etc.), refer to the dedicated **Testing Documentation**:
 
 > [View Full Testing Docs](github_assets/docs/TESTING.md)  
-> _(Create or link your actual testing doc/file.)_
+
 
 ----------
 
