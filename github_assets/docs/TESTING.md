@@ -25,6 +25,25 @@ The information below outlines what testing **was** done, which tools were used,
    - Checked if adding items to favorites and cart worked under normal conditions.
    - Confirmed basic layout consistency and link navigations.
 
+
+   ![Proof](</github_assets/testing_images/1.png>)
+   ![Proof](</github_assets/testing_images/2.png>)
+   ![Proof](</github_assets/testing_images/3.png>)
+   ![Proof](</github_assets/testing_images/4.png>)
+   ![Proof](</github_assets/testing_images/5.png>)
+   ![Proof](</github_assets/testing_images/6.png>)
+   ![Proof](</github_assets/testing_images/7.png>)
+   ![Proof](</github_assets/testing_images/8.png>)
+   ![Proof](</github_assets/testing_images/9.png>)
+   ![Proof](</github_assets/testing_images/10.png>)
+   ![Proof](</github_assets/testing_images/11.png>)
+   ![Proof](</github_assets/testing_images/12.png>)
+   ![Proof](</github_assets/testing_images/13.png>)
+   ![Proof](</github_assets/testing_images/14.png>)
+   ![Proof](</github_assets/testing_images/15.png>)
+
+   
+
 2. **Limited Unit & Integration Tests**  
    - Initially planned more comprehensive test coverage, but only a few Django app tests were written (e.g., minimal views and forms tests).
    - No final coverage report is available due to incomplete integration of all test modules.
