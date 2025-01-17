@@ -115,11 +115,39 @@
                         {% endif %}
                     {% endfor %} 
                 </div>
+                <!-- Footer -->
+                <footer class="container-fluid text-center py-4 mt-5">
+                    <div class="row">
+                        <div class="col">
+                            <!-- Social icons row -->
+                            <p class="mb-2">Connect with us</p>
+                            <a href="https://www.facebook.com/profile.php?id=100082263404768" target="_blank" class="mr-3">
+                                <i class="fab fa-facebook-f fa-lg" style="color: black;"></i>
+                            </a>
+                            <a href="https://www.instagram.com/vintagesavedmysoul/" target="_blank" class="mr-3">
+                                <i class="fab fa-instagram fa-lg" style="color: black;"></i>
+                            </a>
+                            <a href="https://github.com/YakivBrychuk/VintageSavedMySoul/tree/main" target="_blank">
+                                <i class="fab fa-github fa-lg" style="color: black;"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col">
+                            <small class="text-muted">
+                                &copy; 2025 - All rights reserved<br>
+                                This website soon will be an actual functioning site.<br>
+                                It serves as a showcase for a developer's portfolio.
+                            </small>
+                        </div>
+                    </div>
+                </footer>
             </div>
         </div>
     </div>
 
 {% endblock %}
+
 
 {% block postloadjs %}
     {{ block.super }}
