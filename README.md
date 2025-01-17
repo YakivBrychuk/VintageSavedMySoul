@@ -49,7 +49,7 @@ VintageSavedMySoul aims to create an inclusive experience for vintage and handma
 -   **Admin CMS**: For efficient management of product listings, user accounts, stock, and shipping details.
 -   **Global Shipping**: Making preloved fashion accessible to customers around the world.
 
-![Line break](github_assets/readme_images/color-line-break.png)
+<br>
 
 ## 📜 Table of Contents
 
@@ -84,7 +84,7 @@ VintageSavedMySoul aims to create an inclusive experience for vintage and handma
 9.  [⚙️ Setup and Installation (GitHub and Heroku)](#%EF%B8%8F-setup-and-installation-github-and-heroku)
 10.  [🎓 Credits & Acknowledgements](#-credits--acknowledgements)
 
-![Line break](github_assets/readme_images/color-line-break.png)
+
 
 ----------
 

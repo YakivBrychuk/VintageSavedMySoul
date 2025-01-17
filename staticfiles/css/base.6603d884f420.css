@@ -17,11 +17,11 @@ footer {
 
 @font-face {
     font-family: BreathneyDemo;
-    src: url(../fonts/BreathneyDemo.ttf) format('truetype');
+    src: url("../fonts/BreathneyDemo.3c9a9af00881.ttf") format('truetype');
 }
 @font-face {
     font-family: AmalfiCoast;
-    src: url(../fonts/AmalfiCoast.ttf);
+    src: url("../fonts/AmalfiCoast.c8191b4eb6c3.ttf");
 }
 
 #topnav {

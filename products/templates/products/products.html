@@ -82,13 +82,13 @@
                 <!-- START of the PRODUCT GRID -->
                 <div class="row">
                     {% for product in products %}
-                        <!-- 
+                        
                             col-6 => 2 columns on extra-small
                             col-sm-6 => 2 columns on small
                             col-md-4 => 3 columns on medium
                             col-lg-3 => 4 columns on large 
                             col-xl-3 => keep 4 columns on extra-large
-                        -->
+                       
                         <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 mb-4">
                             <div class="card h-100 border-0">
                                 {% if product.image %}
@@ -114,7 +114,7 @@
                                     <p class="mb-0 font-weight-bold">{{ product.name }}</p>
                                 </div>
 
-                                <!-- CARD FOOTER with price and Favorite toggle -->
+                                <!-- CARD price and Favorite toggle -->
                                 <div class="card-footer bg-white border-0 pt-0 d-flex justify-content-between align-items-center">
                                     <div>
                                         <p class="lead mb-0 font-weight-bold">${{ product.price }}</p>
