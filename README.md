@@ -244,7 +244,7 @@ Use an **ER diagram** with tables for `User`, `Product`, `Category`, `Order`, `O
 <br>
 -   High-quality product images to highlight item details.
 <br>
-![Typography](<github_assets/readme_images/products_images.png>)
+![Typography](<github_assets/readme_images/products_live_page.png>)
 
 [⬆️Back to top](#-table-of-contents)
 
@@ -280,6 +280,17 @@ Use an **ER diagram** with tables for `User`, `Product`, `Category`, `Order`, `O
     
     -   Manage products, categories, and user data.
     -   Stock updates and advanced shipping rules.
+
+8.  **Admin Panel** 🛑 Custom Error Handler (404)
+
+- **Styled Design**: The 404 error page is designed to fit the overall website's theme, making it less disruptive for users who land on it.
+
+- **User Guidance**: Offers options to return to the homepage or navigate to other sections of the site.
+
+<b>Custom 404 Handler</b>
+![404](<github_assets/readme_images/page_404.png>)
+
+
 
 ### Additional/Optional Features
 
@@ -353,4 +364,199 @@ For detailed testing procedures (browser compatibility, device responsiveness, u
 ---
 ## Dependencies
 
-Include your `requirements.txt` snippet here, for example:
+To run this project, you need to install the following dependencies. You can do this by running `pip install -r requirements.txt` in your command line. Ensure you are in the project's root directory where the `requirements.txt` file is located.
+```
+argcomplete==3.3.0
+asgiref==3.8.1
+beautifulsoup4==4.12.3
+boto3==1.35.29
+botocore==1.35.29
+cffi==1.16.0
+charset-normalizer==3.3.2
+click==8.1.7
+cryptography==41.0.7
+dj-database-url==0.5.0
+Django==5.1.1
+django-allauth==64.2.1
+django-countries==7.6.1
+django-crispy-forms==1.14.0
+gunicorn==23.0.0
+humanize==3.13.1
+idna==3.7
+iso639==0.1.4
+jmespath==1.0.1
+lxml==5.1.0
+Mako==1.2.3
+MarkupSafe==2.1.3
+pexpect==4.9.0
+pid==2.2.3
+pillow==10.4.0
+pillow-avif-plugin==1.4.6
+ply==3.11
+psycopg2==2.9.9
+ptyprocess==0.7.0
+pycairo==1.25.1
+pycparser==2.20
+python-dateutil==2.8.2
+python-decouple==3.8
+pytz==2024.1
+regex==2024.4.28
+requests==2.31.0
+sqlparse==0.5.1
+stripe==11.0.0
+typing_extensions==4.12.2
+urllib3==1.26.20
+wheel==0.44.0
+django-environ==0.11.2
+crispy-bootstrap4
+whitenoise==6.7.0
+cloudinary
+django-cloudinary-storage
+``` 
+
+
+### ⚙️ Deployment to heroku & GitHub
+
+**In your app** 
+
+1. add the list of requirements by writing in the terminal "pip3 freeze --local > requirements.txt"
+2. Git add and git commit the changes made
+
+**Log into heroku**
+
+3. Log into [Heroku](https://dashboard.heroku.com/apps) or create a new account and log in
+
+4. top right-hand corner click "New" and choose the option Create new app, if you are a new user, the "Create new app" button will appear in the middle of the screen
+
+5. Write app name - it has to be unique, it cannot be the same as this app
+6. Choose Region - I am in Europe
+7. Click "Create App"
+
+**The page of your project opens.**
+
+8. Go to Resources Tab, Add-ons, search and add Heroku Postgres
+
+9. Choose "settings" from the menu on the top of the page
+
+10. Go to section "Config Vars" and click button "Reveal Config Vars". 
+
+11. Add the below variables to the list
+
+    * Database URL will be added automaticaly
+    * Secret_key - is the djnago secret key can be generated [here](https://miniwebtool.com/django-secret-key-generator/). 
+    * Cloudinary URL can be obtained from [cloudinary](https://cloudinary.com/) follow the steps on the website to register. 
+
+**Go back to your code**
+
+12. Procfile needs to be created in your app
+```
+web: gunicorn PROJ_NAME.wsgi
+```
+
+13. In settings in your app add Heroku to ALLOWED_HOSTS
+
+14. Add and commit the changes in your code and push to github
+
+**Final step - deployment**
+
+15. Next go to "Deploy" in the menu bar on the top 
+
+16. Go to section "deployment method", choose "GitHub"
+
+17. New section will appear "Connect to GitHub" - Search for the repository to connect to
+
+18. type the name of your repository and click "search"
+
+19. once Heroku finds your repository - click "connect"
+
+20. Scroll down to the section "Automatic Deploys"
+
+21. Click "Enable automatic deploys" or choose "Deploy branch" and manually deploy
+
+22. Click "Deploy branch"
+
+Once the program runs:
+you should see the message "the app was sussesfully deployed"
+
+23. Click the button "View"
+
+The live link can be found [here](https://tank.up.railway.app/), but currently deployed to Railway - as described below. 
+
+### Deployment to Railway app
+
+Due to heroku starting to charge for deploying full stack application I moved my app to [railway app](https://railway.app/)
+I needed to change the way env variables are refered in settings.py
+
+Needed to add runtime.txt that was stating what version of python the app runs.
+
+I copied env variables to heroku and deployed on Railway appp
+
+### Forking the GitHub Repository
+
+By forking the GitHub Repository you will be able to make a copy of the original repository on your own GitHub account allowing you to view and/or make changes without affecting the original repository by using the following steps:
+
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/YakivBrychuk/VintageSavedMySoul/tree/main)
+2. At the top of the Repository (not top of page) just above the "Settings" button on the menu, locate the "Fork" button.
+3. You should now have a copy of the original repository in your GitHub account.
+
+### Making a Local Clone
+
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/YakivBrychuk/VintageSavedMySoul/tree/main)
+2. Under the repository name, click "Clone or download".
+3. To clone the repository using HTTPS, under "Clone with HTTPS", copy the link.
+4. Open commandline interface on your computer
+5. Change the current working directory to the location where you want the cloned directory to be made.
+6. Type `git clone`, and then paste the URL you copied in Step 3.
+
+```
+$ git clone https://github.com/YakivBrychuk/VintageSavedMySoul
+```
+
+7. Press Enter. Your local clone will be created.
+
+### Setting up your local enviroment
+
+1. Create Virtual enviroment on your computer or use gitpod built in virtual enviroment feature.
+
+2. Create .env file. Place in inside mileage_tracker folder. It needs to contain those 4 variables.
+
+* Database URL can be obtained from [railway app](https://railway.app/), add PostgreSQL as an add on when creating an app. 
+* Secret_key - is the djnago secret key can be generated [here](https://miniwebtool.com/django-secret-key-generator/). 
+
+
+```
+DATABASE_URL = ...
+SECRET_KEY = ...
+CLOUDINARY_URL = ...
+DEVELOPMENT = True
+```
+
+3. Run command 
+```
+pip3 install -r requirements.txt
+```
+
+
+
+## Learning Resources
+- **Corey Schafer on YouTube**: Special thanks to [Corey Schafer](https://www.youtube.com/@coreyms) for his excellent tutorials on Django. His content was instrumental in helping me understand and effectively implement HTMX in the project.
+- **General Online Resources**:
+  - **Stack Overflow**: For being an invaluable resource in troubleshooting and solving numerous coding challenges.
+  - **Google**: For serving as the gateway to a wealth of information, tips, and solutions that were essential throughout the development process.
+
+## Acknowledgements
+
+A heartfelt thank you to the individuals who have provided guidance, support, and inspiration throughout the development of Mont Adventures:
+
+- **Laura Mayock**: Gratitude to [Laura Mayock](https://www.linkedin.com/in/laura-mayock/), for her meaningful conversations and excellent facilitation within our cohort. Your insights and support have been greatly appreciated.
+
+- **My Family**: Immense thanks to my family, who endured my constant screen time over the last three months. Your patience and support have meant the world to me.
+
+- **Code Institute Slack Community**: To the vibrant and humorous Slack community at the Code Institute, thank you for the great laughs and the sense of belonging.
+
+- **Future Assessor**: And to the assessor reviewing this portfolio, I sincerely apologies for not meeting all points of criteries for PP5 and that i cannot share with you whole idea that i envisioned in my head about this project. 
+
+###  Reflection
+
+**Closing Thoughts**: As I look back, I realize that i could do better if i just started doing this project earlier or found dedicated time for this but due to personal ups and downs in life i struglled to to be on track developing this project. But this is not just a project; it's a testament that i should not stop and continue dedicate time in improving, learning more and finish this project.
+P.S: This project was invisioned to be MVP Test for Real E-commerce website i want to do for my Girlfriend.
