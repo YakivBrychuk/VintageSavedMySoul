@@ -400,7 +400,9 @@ display: block;
     font-weight: bold;
 }
 
-
+#products_view {
+    
+    height: 60vh;}
 
 .product-details-container {
     font-family: sans-serif;
