@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import HeroImage
-# Create your views here.
+
 
 def index(request):
     """ A view to display the index page """
@@ -10,3 +10,7 @@ def index(request):
 def index(request):
     hero_images = HeroImage.objects.filter(is_active=True)
     return render(request, 'home/index.html', {'hero_images': hero_images})
+
+
+def about_page(request):
+    return render(request, 'about.html')

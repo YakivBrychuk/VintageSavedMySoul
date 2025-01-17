@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="container">
+        <div class="row py-5">
+            <div class="col text-center">
+                <h1>Welcome to VintageSavedMySoul</h1>
+            </div>
+        </div>
+    </div>
+    <!-- About text -->
+    <div class="row">
+        <div class="col text-center">
+            <p class="lead">Discover a world of sustainable fashion and timeless treasures. We're your go-to source for carefully hand-picked vintage-style pieces and personally handmade items. By shopping secondhand, you give new life to unique finds while reducing the negative impact of fast fashion on the environment.
+
+                Stay connected for exciting updates, exclusive promotions, and be the first to know about new arrivals. Join us in embracing sustainable style and making a difference.
+                <br>
+                <br>
+                Thank you for joining us on this journey towards a more conscious and stylish future.
+                <br>
+                Stay tuned for new updates coming soon!</p>
+        </div>
+    </div>
+
+    <!-- Newsletter subscription form -->
+    <div class="row my-5">
+        <div class="col text-center">
+            <h4>Subscribe for Latest Offers</h4>
+            <p>Sign up to receive our newsletter with the newest arrivals and special offers.</p>
+
+            <!-- Simple form (no actual backend here) -->
+            <form method="POST" action="#">
+                {% csrf_token %}
+                <div class="form-group d-inline-block">
+                    <input type="email" name="email" class="form-control rounded-0" 
+                           placeholder="Enter your email" required>
+                </div>
+                <button type="submit" class="btn btn-black rounded-0">Subscribe</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    <!-- JS newsletter form, add it here -->
+{% endblock %}

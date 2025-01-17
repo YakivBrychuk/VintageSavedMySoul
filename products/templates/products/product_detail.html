@@ -190,20 +190,44 @@
                                 {% endif %}
                             </div>
 
-
-                            <div class="col-12 mt-2">
+                            <div class="col-12 mt-2 d-flex align-items-center">
                                 <a href="{% url 'products' %}"
-                                   class="btn btn-outline-black rounded-0 mt-5">
+                                   class="btn btn-outline-black rounded-0 mt-5 mr-2">
                                     <span class="icon">
                                         <i class="fas fa-chevron-left"></i>
                                     </span>
                                     <span class="text-uppercase">Keep Shopping</span>
                                 </a>
                                 <input type="submit"
-                                       class="btn btn-black rounded-0 text-uppercase mt-5"
+                                       class="btn btn-black rounded-0 text-uppercase mt-5 mr-2"
                                        value="Add to Bag">
+                                <!-- Heart Icon -->
+                                {% if user.is_authenticated %}
+                                    {% if user in product.favorited_by.all %}
+                                        <!-- Filled heart -->
+                                        <a href="{% url 'toggle_favorite' product.id %}"
+                                           class="btn btn-black rounded-0 mt-5"
+                                           title="Remove from Favorites">
+                                            <i class="fas fa-heart text-danger"></i>
+                                        </a>
+                                    {% else %}
+                                        <!-- Outline heart -->
+                                        <a href="{% url 'toggle_favorite' product.id %}"
+                                           class="btn btn-black rounded-0 mt-5"
+                                           title="Add to Favorites">
+                                            <i class="far fa-heart"></i>
+                                        </a>
+                                    {% endif %}
+                                {% else %}
+                                    <!-- If not logged in -->
+                                    <a href="{% url 'account_login' %}"
+                                       class="btn btn-black rounded-0 mt-5"
+                                       title="Login to Favorite">
+                                        <i class="far fa-heart"></i>
+                                    </a>
+                                {% endif %}
                             </div>
-
+                            
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         </div>
                     </form>
