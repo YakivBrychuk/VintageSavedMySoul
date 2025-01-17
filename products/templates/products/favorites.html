@@ -9,8 +9,8 @@
 {% endblock %}
 
 {% block content %}
-<div class="container py-5">
-    <h2>My Favorites</h2>
+<div class="container py-5" style="height: 80vh;">
+    <h1>My Favorites</h1>
     {% if favorite_products %}
         <div class="row">
             {% for product in favorite_products %}
@@ -34,7 +34,7 @@
             {% endfor %}
         </div>
     {% else %}
-        <p>No favorites yet!</p>
+        <h3>No favorites yet!</h3>
     {% endif %}
 </div>
 {% endblock %}

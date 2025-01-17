@@ -180,12 +180,15 @@
             </nav>
         </div>
         {% if request.resolver_match.url_name == 'view_bag' %}
-        <div id="delivery-banner" class="row text-center">          
-            <div class="col bg-black text-white">
-                <h4 class="logo-font my-1">Free delivery on orders over €{{ free_delivery
-                    _threshold }}!</h4>                
-            </div>            
-        </div>
+            {% if free_delivery_threshold %}
+                <div id="delivery-banner" class="row text-center">
+                    <div class="col bg-black text-white">
+                        <h4 class="logo-font my-1">
+                            Free delivery on orders over €{{ free_delivery_threshold }}!
+                        </h4>
+                    </div>
+                </div>
+            {% endif %}
         {% endif %}
     </header>
 
@@ -241,11 +244,10 @@
 
     {% block page_header %}
     {% endblock %}
-    <main>
-        {% block content %}
-        {% endblock %}
-    </main>
-    
+
+    {% block content %}
+    {% endblock %}
+
     {% block extra_footer %}
         <!-- Footer -->
         <footer class="container-fluid text-center py-4 mt-5">
@@ -254,13 +256,13 @@
                     <!-- Social icons row -->
                     <p class="mb-2">Connect with us</p>
                     <a href="https://www.facebook.com/profile.php?id=100082263404768" target="_blank" class="mr-3">
-                        <i class="fab fa-facebook-f fa-lg"></i>
+                        <i class="fab fa-facebook-f fa-lg" style="color: black;"></i>
                     </a>
                     <a href="https://www.instagram.com/vintagesavedmysoul/" target="_blank" class="mr-3">
-                        <i class="fab fa-instagram fa-lg"></i>
+                        <i class="fab fa-instagram fa-lg" style="color: black;"></i>
                     </a>
                     <a href="https://github.com/YakivBrychuk/VintageSavedMySoul/tree/main" target="_blank">
-                        <i class="fab fa-github fa-lg"></i>
+                        <i class="fab fa-github fa-lg" style="color: black;"></i>
                     </a>
                 </div>
             </div>

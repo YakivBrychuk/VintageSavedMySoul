@@ -340,6 +340,7 @@ display: block;
 /* Main Page Images  */
 
 .hero-section {
+    height: 72vh;
     display: flex; 
     justify-content: center;
     align-items: center;  
