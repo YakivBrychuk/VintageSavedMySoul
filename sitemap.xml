@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://vintagesavedmysoul-eb73f1fba3d0.herokuapp.com/</loc>
+  <lastmod>2025-01-17T02:44:34+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://vintagesavedmysoul-eb73f1fba3d0.herokuapp.com/accounts/login/</loc>
+  <lastmod>2025-01-17T02:44:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vintagesavedmysoul-eb73f1fba3d0.herokuapp.com/accounts/signup/</loc>
+  <lastmod>2025-01-17T02:44:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vintagesavedmysoul-eb73f1fba3d0.herokuapp.com/bag/</loc>
+  <lastmod>2025-01-17T02:44:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vintagesavedmysoul-eb73f1fba3d0.herokuapp.com/products/?sort=price&amp;direction=asc</loc>
+  <lastmod>2025-01-17T02:44:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vintagesavedmysoul-eb73f1fba3d0.herokuapp.com/products/?sort=rating&amp;direction=desc</loc>
+  <lastmod>2025-01-17T02:44:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vintagesavedmysoul-eb73f1fba3d0.herokuapp.com/products/?sort=category&amp;direction=asc</loc>
+  <lastmod>2025-01-17T02:44:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vintagesavedmysoul-eb73f1fba3d0.herokuapp.com/products/</loc>
+  <lastmod>2025-01-17T02:44:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vintagesavedmysoul-eb73f1fba3d0.herokuapp.com/products/?category=vintage,blouses_shirts</loc>
+  <lastmod>2025-01-17T02:44:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vintagesavedmysoul-eb73f1fba3d0.herokuapp.com/products/?category=blazers_jackets</loc>
+  <lastmod>2025-01-17T02:44:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vintagesavedmysoul-eb73f1fba3d0.herokuapp.com/products/?category=knitwear</loc>
+  <lastmod>2025-01-17T02:44:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vintagesavedmysoul-eb73f1fba3d0.herokuapp.com/products/?category=dresses</loc>
+  <lastmod>2025-01-17T02:44:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vintagesavedmysoul-eb73f1fba3d0.herokuapp.com/products/?category=skirts</loc>
+  <lastmod>2025-01-17T02:44:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vintagesavedmysoul-eb73f1fba3d0.herokuapp.com/products/?category=tops</loc>
+  <lastmod>2025-01-17T02:44:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vintagesavedmysoul-eb73f1fba3d0.herokuapp.com/products/?category=vests</loc>
+  <lastmod>2025-01-17T02:44:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vintagesavedmysoul-eb73f1fba3d0.herokuapp.com/products/?category=t_shirts</loc>
+  <lastmod>2025-01-17T02:44:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vintagesavedmysoul-eb73f1fba3d0.herokuapp.com/products/?category=lingerie</loc>
+  <lastmod>2025-01-17T02:44:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vintagesavedmysoul-eb73f1fba3d0.herokuapp.com/products/?category=bodysuit</loc>
+  <lastmod>2025-01-17T02:44:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vintagesavedmysoul-eb73f1fba3d0.herokuapp.com/products/?category=jumpsuit</loc>
+  <lastmod>2025-01-17T02:44:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vintagesavedmysoul-eb73f1fba3d0.herokuapp.com/products/?category=cardigan</loc>
+  <lastmod>2025-01-17T02:44:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vintagesavedmysoul-eb73f1fba3d0.herokuapp.com/products/?category=corsets</loc>
+  <lastmod>2025-01-17T02:44:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vintagesavedmysoul-eb73f1fba3d0.herokuapp.com/products/?category=coats_jackets</loc>
+  <lastmod>2025-01-17T02:44:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vintagesavedmysoul-eb73f1fba3d0.herokuapp.com/products/?category=blouses_shirts,blazers_jackets,knitwear,dresses,skirts,tops,vests,t_shirts,lingerie,bodysuit,jumpsuit,cardigan,corsets,coats_jackets</loc>
+  <lastmod>2025-01-17T02:44:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vintagesavedmysoul-eb73f1fba3d0.herokuapp.com/products/?category=handmade_tops</loc>
+  <lastmod>2025-01-17T02:44:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vintagesavedmysoul-eb73f1fba3d0.herokuapp.com/products/?category=handmade_dresses</loc>
+  <lastmod>2025-01-17T02:44:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vintagesavedmysoul-eb73f1fba3d0.herokuapp.com/products/?category=handmade_jackets_blazers</loc>
+  <lastmod>2025-01-17T02:44:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vintagesavedmysoul-eb73f1fba3d0.herokuapp.com/products/?category=handmade_accessories</loc>
+  <lastmod>2025-01-17T02:44:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vintagesavedmysoul-eb73f1fba3d0.herokuapp.com/products/?category=handmade_tops,handmade_dresses,handmade_jackets_blazers,handmade_accessories</loc>
+  <lastmod>2025-01-17T02:44:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vintagesavedmysoul-eb73f1fba3d0.herokuapp.com/products/?category=new_arrivals</loc>
+  <lastmod>2025-01-17T02:44:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vintagesavedmysoul-eb73f1fba3d0.herokuapp.com/products/?category=deals</loc>
+  <lastmod>2025-01-17T02:44:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vintagesavedmysoul-eb73f1fba3d0.herokuapp.com/products/?category=clearance</loc>
+  <lastmod>2025-01-17T02:44:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vintagesavedmysoul-eb73f1fba3d0.herokuapp.com/products/?category=new_arrivals,deals,clearance</loc>
+  <lastmod>2025-01-17T02:44:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vintagesavedmysoul-eb73f1fba3d0.herokuapp.com/accounts/password/reset/</loc>
+  <lastmod>2025-01-17T02:44:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vintagesavedmysoul-eb73f1fba3d0.herokuapp.com/products/192/</loc>
+  <lastmod>2025-01-17T02:44:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vintagesavedmysoul-eb73f1fba3d0.herokuapp.com/products/163/</loc>
+  <lastmod>2025-01-17T02:44:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vintagesavedmysoul-eb73f1fba3d0.herokuapp.com/products/193/</loc>
+  <lastmod>2025-01-17T02:44:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vintagesavedmysoul-eb73f1fba3d0.herokuapp.com/products/161/</loc>
+  <lastmod>2025-01-17T02:44:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vintagesavedmysoul-eb73f1fba3d0.herokuapp.com/products/164/</loc>
+  <lastmod>2025-01-17T02:44:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vintagesavedmysoul-eb73f1fba3d0.herokuapp.com/products/165/</loc>
+  <lastmod>2025-01-17T02:44:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vintagesavedmysoul-eb73f1fba3d0.herokuapp.com/products/166/</loc>
+  <lastmod>2025-01-17T02:44:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vintagesavedmysoul-eb73f1fba3d0.herokuapp.com/products/175/</loc>
+  <lastmod>2025-01-17T02:44:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vintagesavedmysoul-eb73f1fba3d0.herokuapp.com/products/176/</loc>
+  <lastmod>2025-01-17T02:44:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vintagesavedmysoul-eb73f1fba3d0.herokuapp.com/products/170/</loc>
+  <lastmod>2025-01-17T02:44:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vintagesavedmysoul-eb73f1fba3d0.herokuapp.com/products/?category=blouses_shirts</loc>
+  <lastmod>2025-01-17T02:44:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vintagesavedmysoul-eb73f1fba3d0.herokuapp.com/products/194/</loc>
+  <lastmod>2025-01-17T02:44:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vintagesavedmysoul-eb73f1fba3d0.herokuapp.com/products/195/</loc>
+  <lastmod>2025-01-17T02:44:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vintagesavedmysoul-eb73f1fba3d0.herokuapp.com/products/196/</loc>
+  <lastmod>2025-01-17T02:44:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vintagesavedmysoul-eb73f1fba3d0.herokuapp.com/products/162/</loc>
+  <lastmod>2025-01-17T02:44:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vintagesavedmysoul-eb73f1fba3d0.herokuapp.com/products/167/</loc>
+  <lastmod>2025-01-17T02:44:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vintagesavedmysoul-eb73f1fba3d0.herokuapp.com/products/168/</loc>
+  <lastmod>2025-01-17T02:44:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vintagesavedmysoul-eb73f1fba3d0.herokuapp.com/products/173/</loc>
+  <lastmod>2025-01-17T02:44:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vintagesavedmysoul-eb73f1fba3d0.herokuapp.com/products/159/</loc>
+  <lastmod>2025-01-17T02:44:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vintagesavedmysoul-eb73f1fba3d0.herokuapp.com/products/160/</loc>
+  <lastmod>2025-01-17T02:44:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vintagesavedmysoul-eb73f1fba3d0.herokuapp.com/products/158/</loc>
+  <lastmod>2025-01-17T02:44:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vintagesavedmysoul-eb73f1fba3d0.herokuapp.com/products/171/</loc>
+  <lastmod>2025-01-17T02:44:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vintagesavedmysoul-eb73f1fba3d0.herokuapp.com/products/174/</loc>
+  <lastmod>2025-01-17T02:44:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vintagesavedmysoul-eb73f1fba3d0.herokuapp.com/products/172/</loc>
+  <lastmod>2025-01-17T02:44:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>
